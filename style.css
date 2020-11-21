@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
 
 html, body {
-  margin: 0;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 0;
   font-family: 'Spartan', sans-serif;  
 }
 html {
   background-image: url('./images/bg-pattern-bottom-desktop.svg');
   background-repeat: no-repeat;
-  background-size: 115%;  
+  background-size: cover;  
 }
 body {
   background-image: url('./images/bg-pattern-top-desktop.svg');
@@ -59,8 +60,10 @@ body {
 .ratings div:nth-child(3) {
   transform: translateX(0px);
 }
-.testimonials {    
-  flex-wrap: wrap; 
+.testimonials { 
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 .card {
   flex: 0 1 300px;
@@ -93,8 +96,61 @@ body {
   font-weight: 600;
 }
 .testimony {
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
   display: inline-block;
   word-spacing: 1px;
   line-height: 1.5rem;
+}
+@media screen and (max-width: 910px) {
+  .top {
+    margin: 0 auto;
+    max-width: 375px;
+    padding-top: 3rem;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .intro {
+    width: 80%;
+  }
+  .title {
+    width: auto;
+    font-size: 2rem;
+  }
+  .description {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .ratings div:nth-child(1) {
+    transform: none;
+  }
+  .ratings div:nth-child(2) {
+    transform: none;
+  }
+  .ratings div:nth-child(3) {
+    transform: none;
+  }
+  .ratings {
+    width: 375px;
+  }
+  .ratings div {
+    width: 80%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+  }
+  .testimonials {
+    max-width: 375px;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .card {
+    
+  }
 }
